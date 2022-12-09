@@ -1,0 +1,52 @@
+%!TEX root = resume.tex
+\documentclass[letterpaper,10pt]{article}
+
+% I prefer Adobe Utopia font
+\usepackage{fourier}
+
+% Choose theme, e.g. black, RedViolet, ForestGreen, MidnightBlue
+\def\theme{Black}
+
+% More predefined colors can be found in 
+% https://en.wikibooks.org/wiki/LaTeX/Colors
+
+\usepackage{simplecv}
+
+\input{bibtype}
+
+% Bold name in bib
+\boldname{Wang}{Yuyang}{Y.}
+
+\begin{document}
+
+% Heading
+\headinginline{Yuyang \textsc{Wang}}{
+    Dept. of Electrical \& Computer Engineering \\
+    Harold Frank Hall, UCSB \\
+    Santa Barbara, CA 93106 \\
+	\faPhoneSquare ~ (781)428-0408 \\
+    \faEnvelopeSquare ~ \email{yuyang\_wang@ucsb.edu} \\
+    % \faExternalLinkSquare ~ \website{cadlab.ece.ucsb.edu/~ywang} \\
+    % \faLinkedinSquare ~ \linkedin{yuyangucsb} \\
+    % \faGithubSquare ~ \github{wyywyy23} \\
+}
+
+% Page One
+\import{sections/}{education.tex}
+\import{sections/}{experience.tex}
+\import{sections/}{publications.tex}
+
+% \pagebreak
+
+% Page Two
+\import{sections/}{talks.tex}
+\import{sections/}{activities.tex}
+% \sidebyside
+    % {\import{sections/}{skills.tex}}
+    % {\import{sections/}{languages.tex}}
+\import{sections/}{skills.tex}
+% \import{sections/}{projects.tex}
+% \import{sections/}{awards.tex}
+% \import{sections/}{volunteering.tex}
+
+\end{document}
