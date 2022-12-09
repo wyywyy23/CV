@@ -1,37 +1,5 @@
-%!TEX root = resume.tex
-
-% \begin{filecontents}[overwrite]{invited.dbx}
-%   \DeclareDatamodelEntrytypes{invited}
-%   \DeclareDatamodelFields[type=list,datatype=name]{author}
-%   \DeclareDatamodelFields[type=field,datatype=literal]{title, booktitle, number, month, year}
-%   \DeclareDatamodelFields[type=field,datatype=integer]{volume}
-%   \DeclareDatamodelFields[type=field,datatype=range]{pages}
-%   \DeclareDatamodelFields[type=field,datatype=verbatim]{doi}
-%   \DeclareDatamodelEntryfields[stackexchange]{
-%   name,
-%   title,
-%   booktitle,
-%   volumn,
-%   number,
-%   month,
-%   year,
-%   pages,
-%   doi}
-% \end{filecontents}
+%!TEX root = YW_CV.tex
 
 \DeclareBibliographyAlias{invited}{inproceedings}
 \DeclareFieldFormat[invited]{title}{\mkbibquote{#1\isdot}}
 % \DeclareFieldFormat[invited]{booktitle}{in \emph{#1}}
-
-% \DeclareBibliographyDriver{invited}{%
-%   \usebibmacro{bibindex}%
-%   \usebibmacro{begentry}%
-%   \printnames{author}%
-%   \newunit\newblock
-%   \printfield{title}%
-%   \newunit\newblock
-%   \printfield{booktitle}%
-%   \newunit\newblock
-%   \printfield{month}
-%   \printfield{year}%
-%   \usebibmacro{finentry}}
