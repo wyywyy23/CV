@@ -14,6 +14,8 @@
 \usepackage[export]{adjustbox}              % Aligning margins
 \usepackage{import}
 \usepackage{fontawesome}
+\usepackage{fourier}
+\usepackage{FiraMono}
 \usepackage[T1]{fontenc}
 \usepackage{bm}
 
@@ -21,7 +23,8 @@
 \usepackage[style=ieee,url=false,doi=false,maxbibnames=99,sorting=ydnt,dashed=false,defernumbers=true]{biblatex}
 \bibliography{papers}
 \nocite{*}
-\DeclareFieldFormat{labelnumberwidth}{#1}
+% \DeclareFieldFormat{labelnumberwidth}{#1}
+\DeclareFieldFormat{labelnumberwidth}{\textup{\texttt{#1}}}
 % \AtEveryBibitem{\clearfield{pages}} 
 
 % % Chinese
@@ -64,10 +67,10 @@
 % Shorthand
 \newcommand{\address}[1]{\faPencilSquare~#1}
 \newcommand{\tel}[1]{\faPhoneSquare~#1}
-\newcommand{\github}[1]{\href{https://github.com/#1/}{github.com/#1}}
+\newcommand{\github}[1]{\faGithubSquare~\href{https://github.com/#1/}{github.com/#1}}
 \newcommand{\email}[1]{\faEnvelopeSquare~\href{mailto:#1}{#1}}
 \newcommand{\website}[1]{\faExternalLinkSquare~\href{https://#1}{#1}}
-\newcommand{\linkedin}[1]{\href{https://www.linkedin.com/in/#1/}{#1}}
+\newcommand{\linkedin}[1]{\faLinkedinSquare~\href{https://www.linkedin.com/in/#1/}{#1}}
 
 % Dummy environment
 \newenvironment*{dummyenv}{}{}
@@ -89,8 +92,8 @@
 % Two-line heading with variable number of arguments
 \makeatletter
 \newcommand{\headingtwoline}[2]{%
-    \centering
-    {\huge \textcolor{color-title}{#1}}\\
+    % \centering
+    {\Huge \textcolor{color-title}{#1}}\\
     \smallskip
     {\small #2}
 }
@@ -130,7 +133,9 @@
     \vspace{-\smallskipamount}]
 
 % Footer
-\fancyfoot[R]{Page \thepage \hspace{1pt} of \pageref{LastPage}}
+% \fancyfoot[R]{Page \thepage \hspace{1pt} of \pageref{LastPage}}
+\fancyfoot[R]{\texttt{\thepage~/~\pageref{LastPage}}}
+
 
 % Lists
 \newcommand{\outerlist}[1]{
