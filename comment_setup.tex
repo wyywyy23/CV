@@ -1,0 +1,25 @@
+\usepackage{soul}
+\usepackage{xcolor}
+\colorlet{lightyellow}{yellow!20}
+\sethlcolor{lightyellow}
+\soulregister\cite7
+\soulregister\ref7
+\soulregister\eqref7
+\usepackage[inline, nomargin, marginclue, multiuser, draft]{fixme}
+\fxsetup{theme=color}
+\usepackage{mdframed}
+\mdfdefinestyle{hl}{innerleftmargin=0, innerrightmargin=0, innertopmargin=0, innerbottommargin=0, backgroundcolor=lightyellow, linewidth=0}
+\makeatletter
+\renewcommand*\FXLayoutInline[3]{%
+    \@fxdocolon{#3}{%
+        \@fxuseface{inline}%
+        \begingroup
+        \color{fx#1}\ignorespaces\hl{#3\mbox{\@fxcolon}#2}%
+        \endgroup}}
+\renewcommand*\FXEnvLayoutColorBegin[2]{%
+    \@fxdocolon{#2}%
+    \@fxuseface{env}%
+    \begin{mdframed}[style=hl, fontcolor=fx#1]
+        \ignorespaces#2\@fxcolon\ignorespaces}
+        \renewcommand*\FXEnvLayoutColorEnd[2]{\end{mdframed}}
+\makeatother
