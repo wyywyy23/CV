@@ -19,6 +19,7 @@
 \setmainfont[Scale=0.925]{Heuristica}
 \setmonofont[Scale=0.925, Numbers=OldStyle]{Fira Mono}
 \usepackage{bm}
+\usepackage{ifthen}
 
 % Choose bibliography style for formatting list of publications
 \usepackage[style=ieee,url=false,doi=true,maxbibnames=99,sorting=ydnt,dashed=false,defernumbers=true]{biblatex}
@@ -141,6 +142,7 @@
 
 % Footer
 % \fancyfoot[R]{Page \thepage \hspace{1pt} of \pageref{LastPage}}
+\fancyfoot[L]{\ifnum\thepage=1 Last updated on \today. \else \fi}
 \fancyfoot[R]{\texttt{\thepage~/~\pageref{LastPage}}}
 
 
