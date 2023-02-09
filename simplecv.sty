@@ -14,6 +14,7 @@
 \usepackage[export]{adjustbox}              % Aligning margins
 \usepackage{import}
 \usepackage{fontawesome}
+\usepackage{academicons}
 \usepackage{fourier}
 \usepackage{FiraMono}
 \usepackage[T1]{fontenc}
@@ -25,7 +26,13 @@
 \nocite{*}
 % \DeclareFieldFormat{labelnumberwidth}{#1}
 \DeclareFieldFormat{labelnumberwidth}{\textup{\texttt{#1}}}
-\AtEveryBibitem{\clearfield{isbn}} 
+\DeclareFieldFormat{doi}{%
+  \aiDoi\addcolon\space
+  \ifhyperref
+    {\href{https://doi.org/#1}{\nolinkurl{#1}}}
+    {\nolinkurl{#1}}}
+\AtEveryBibitem{\clearfield{isbn}}
+\AtEveryBibitem{\clearfield{issn}} 
 
 % % Chinese
 % \usepackage{xeCJK}

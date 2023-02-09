@@ -7,7 +7,7 @@ RM = rm -rf
 .PHONY : all clean
 
 all : 
-	$(COMPILE) -pdflatex $(TEXFILE)
+	$(COMPILE) -lualatex $(TEXFILE)
 clean :
 	$(COMPILE) -C
 	@$(RM) *.thm *.bbl
