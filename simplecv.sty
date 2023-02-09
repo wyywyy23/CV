@@ -27,7 +27,7 @@
 % \DeclareFieldFormat{labelnumberwidth}{#1}
 \DeclareFieldFormat{labelnumberwidth}{\textup{\texttt{#1}}}
 \DeclareFieldFormat{doi}{%
-  \aiDoi\addcolon\space
+\raisebox{-0.36pt}{\scalebox{0.9}{\aiDoi}}\,%
   \ifhyperref
     {\href{https://doi.org/#1}{\nolinkurl{#1}}}
     {\nolinkurl{#1}}}
