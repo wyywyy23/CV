@@ -151,9 +151,12 @@
 
 % Two-columns
 \newcommand{\sidebyside}[2]{
-    \begin{multicols}{2}
-    #1 \columnbreak
-    #2 \end{multicols}
+    \begin{minipage}[t]{0.50\textwidth}
+        #1
+    \end{minipage}%
+    \begin{minipage}[t]{0.50\textwidth}
+        #2
+    \end{minipage}%
 }
 
 % Section titles
@@ -197,6 +200,15 @@
 \newcommand{\entrybigsingleline}[3][]{\item[#1]
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
     #2 & #3 \\ \end{tabular*}}
+
+\newcommand{\entryreference}[4]{
+    \item[]%
+    \begin{tabular*}{0.97\textwidth}{l}
+        \textbf{#1} \\
+        {\small\emph{#2}} \\
+        {\small#3} \\
+        {\small\href{mailto:#4}{#4}}
+    \end{tabular*}}
 
 % bib font size
 \renewcommand*{\bibfont}{\small}
