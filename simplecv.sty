@@ -2,7 +2,6 @@
 
 % Packages
 \usepackage[cm]{fullpage}                   % Margins
-\usepackage[hidelinks]{hyperref}            % Hyperlinks
 \usepackage{titlesec}                       % Title formatting
 \usepackage{subfiles}                       % File importing
 \usepackage{multicol}                       % Multiple columns
@@ -20,6 +19,8 @@
 \setmonofont[Scale=0.925, Numbers=OldStyle]{Fira Mono}
 \usepackage{bm}
 \usepackage{ifthen}
+\definecolor{link_col}{HTML}{5e81ac}
+\usepackage[colorlinks=true, allcolors=link_col]{hyperref}            % Hyperlinks
 % \usepackage{zref-abspage,zref-lastpage}
 % \makeatletter
 % \@ifpackagelater{zref-abspage}{2013/02/09}{%
