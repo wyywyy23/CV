@@ -135,5 +135,3 @@ sympy-plots-for-*.tex/
 # xelatex output
 *.xdv
 
-# output pdf files
-*.pdf
