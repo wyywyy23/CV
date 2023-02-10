@@ -20,6 +20,27 @@
 \setmonofont[Scale=0.925, Numbers=OldStyle]{Fira Mono}
 \usepackage{bm}
 \usepackage{ifthen}
+% \usepackage{zref-abspage,zref-lastpage}
+% \makeatletter
+% \@ifpackagelater{zref-abspage}{2013/02/09}{%
+%   \newcommand*{\iffancylastpage}{%
+%     \ifnum\zref@extractdefault{LastPage}{abspage}{-1}=\value{zabspage}%
+%       \expandafter\@firstoftwo
+%     \else
+%       \expandafter\@secondoftwo
+%     \fi
+%   }%
+% }{%
+%   \newcommand*{\iffancylastpage}{%
+%     \ifnum\zref@extractdefault{LastPage}{abspage}{-1}%
+%         =\numexpr\value{abspage}+1\relax
+%       \expandafter\@firstoftwo
+%     \else
+%       \expandafter\@secondoftwo
+%     \fi
+%   }%
+% }
+% \makeatother
 
 % Choose bibliography style for formatting list of publications
 \usepackage[style=ieee,url=false,doi=true,maxbibnames=99,sorting=ydnt,dashed=false,defernumbers=true]{biblatex}
@@ -142,7 +163,8 @@
 
 % Footer
 % \fancyfoot[R]{Page \thepage \hspace{1pt} of \pageref{LastPage}}
-\fancyfoot[L]{\ifnum\thepage=1 Last updated on \today. \else \fi}
+\fancyfoot[L]{\ifnum\thepage=1 Last updated: \today \else \fi}
+% \fancyfoot[L]{\iffancylastpage{Last updated: \today}{}}
 \fancyfoot[R]{\texttt{\thepage~/~\pageref{LastPage}}}
 
 
