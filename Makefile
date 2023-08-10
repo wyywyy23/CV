@@ -1,5 +1,5 @@
 # variables
-TEXFILE = YW_CV
+TEXFILE = cv_yw
 COMPILE = latexmk 
 RM = rm -rf
 
